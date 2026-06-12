@@ -3,33 +3,14 @@ import pandas as pd
 import json
 import os
 
-st.set_page_config(page_title="AI Recruiter Dashboard", layout="wide")
+st.set_page_config(page_title="AI Recruiter Dashboard", layout="wide", page_icon="📊")
 
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            .stDeployButton {display:none;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+st.title("AI Recruiter Dashboard")
+st.markdown("---")
 
 DASH_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(DASH_DIR)
 OUTPUTS_DIR = os.path.join(BASE_DIR, 'outputs')
-
-col_logo, col_title = st.columns([1, 10])
-with col_logo:
-    try:
-        st.image(os.path.join(DASH_DIR, "logo.png"), width=70)
-    except Exception:
-        pass
-        
-with col_title:
-    st.title("AI Recruiter Dashboard")
-    
-st.markdown("---")
 
 @st.cache_data
 def load_data():
