@@ -1,5 +1,7 @@
 # Intelligent Candidate Discovery System
 
+![AI Recruiter Dashboard](docs/dashboard.png)
+
 ## Overview
 This repository contains a comprehensive candidate ranking and evaluation system designed to process large-scale applicant datasets and surface high-quality engineering talent based on multi-dimensional scoring. 
 

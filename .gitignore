@@ -10,9 +10,9 @@ ENV/
 env.bak/
 venv.bak/
 
-# Challenge Data 
-# (Large files and organizer inputs should not be checked in)
-challenge_data/
+# Ignore massive raw dataset files to prevent GitHub 100MB limit rejection
+challenge_data/India_runs_data_and_ai_challenge/*.jsonl
+challenge_data/India_runs_data_and_ai_challenge/sample_candidates.json
 
 # OS generated files
 .DS_Store
