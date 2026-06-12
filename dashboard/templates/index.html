@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Recruiter Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>AI Recruiter Dashboard</h1>
+      <hr class="divider" />
+
+      <section class="summary-section">
+        <h2>Executive Summary</h2>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <p class="metric-label">Candidates Processed</p>
+            <h3 class="metric-val">50,000+</h3>
+          </div>
+          <div class="metric-card">
+            <p class="metric-label">Top Candidates</p>
+            <h3 class="metric-val" id="topCandidates">-</h3>
+          </div>
+          <div class="metric-card">
+            <p class="metric-label">Avg Technical Fit</p>
+            <h3 class="metric-val" id="avgTech">-</h3>
+          </div>
+          <div class="metric-card">
+            <p class="metric-label">Avg Founding Fit</p>
+            <h3 class="metric-val" id="avgFounding">-</h3>
+          </div>
+          <div class="metric-card">
+            <p class="metric-label">Avg Hiring Prob</p>
+            <h3 class="metric-val" id="avgHiring">-</h3>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <div class="dashboard-workspace">
+        <div class="panel-left">
+          <h2>Top 100 Candidates</h2>
+          <div class="control-group">
+            <label for="candidateSelect">Select Candidate:</label>
+            <select id="candidateSelect" class="styled-select"></select>
+          </div>
+          <div class="table-frame">
+            <table id="candidateTable">
+              <thead>
+                <tr>
+                  <th>candidate_id</th>
+                  <th>rank</th>
+                  <th>score</th>
+                  <th>reasoning</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-right">
+          <h2 id="candidateTitle" class="candidate-header">Candidate: -</h2>
+          <div class="meta-row">
+            <p><strong>Rank:</strong> <span id="rank" class="highlight-text">-</span></p>
+            <p><strong>Final Score:</strong> <span id="score" class="highlight-text">-</span></p>
+          </div>
+
+          <h3 class="section-title">Recruiter Reasoning</h3>
+          <div class="reason-box" id="reasoning">-</div>
+          
+          <h3 class="section-title">Six Pillar Score Breakdown</h3>
+          <div class="analytics-matrix">
+            <div class="score-row">
+              <label><span id="techVal" class="score-value">0</span>Technical Fit : </label>
+              <div class="progress-track">
+                <div id="techBar" class="progress-fill"></div>
+              </div>
+            </div>
+            <div class="score-row">
+              <label><span id="seniorVal" class="score-value">0</span>Seniority Fit :</label>
+              <div class="progress-track">
+                <div id="seniorBar" class="progress-fill"></div>
+              </div>
+            </div>
+            <div class="score-row">
+              <label><span id="foundingVal" class="score-value">0</span>Founding-Team Fit :</label>
+              <div class="progress-track">
+                <div id="foundingBar" class="progress-fill"></div>
+              </div>
+            </div>
+            <div class="score-row">
+              <label><span id="hiringVal" class="score-value">0</span>Hiring Probability :</label>
+              <div class="progress-track">
+                <div id="hiringBar" class="progress-fill"></div>
+              </div>
+            </div>
+            <div class="score-row">
+              <label><span id="behaviorVal" class="score-value">0</span>Behavioral Fit :</label>
+              <div class="progress-track">
+                <div id="behaviorBar" class="progress-fill"></div>
+              </div>
+            </div>
+            <div class="score-row">
+              <label><span id="evidenceVal" class="score-value">0</span>Evidence Strength :</label>
+              <div class="progress-track">
+                <div id="evidenceBar" class="progress-fill"></div>
+              </div>
+            </div>
+          </div> 
+        </div> 
+
+      </div> 
+    </div> 
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
